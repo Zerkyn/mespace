@@ -1,0 +1,13 @@
+main{
+    border: solid;
+    width: 20%;
+    height: 500px;
+    display: block;
+    margin:auto;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
