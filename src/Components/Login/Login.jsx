@@ -5,17 +5,17 @@ import './login.css'
 import { useNavigate } from "react-router-dom";
 
 const Login = (props) => {
-    const [email, setEmail] = useState('')
+    const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
 
     const signUp = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:4455/register', { email, password })
+        axios.post('http://localhost:4455/register', { username, password })
             .then(res => {
                 navigate('/social')
                 props.setUser(res.data)
-                setEmail('')
+                setUsername('')
                 setPassword('')
             })
             .catch(err => console.log(err))
@@ -23,11 +23,11 @@ const Login = (props) => {
 
     const logIn = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:4455/login', { email, password })
+        axios.post('http://localhost:4455/login', { username, password })
             .then(res => {
                 navigate('/social')
                 props.setUser(res.data)
-                setEmail('')
+                setUsername('')
                 setPassword('')
             })
             .catch(err => console.log(err))
@@ -47,12 +47,12 @@ const Login = (props) => {
                 <h1>Mespace</h1>
                 <form>
                     <input
-                        placeholder="email"
-                        onChange={e => setEmail(e.target.value)}>
+                        placeholder="Username"
+                        onChange={e => setUsername(e.target.value)}>
 
                     </input>
                     <input
-                        placeholder="password"
+                        placeholder="Password"
                         onChange={e => setPassword(e.target.value)}>
 
                     </input>

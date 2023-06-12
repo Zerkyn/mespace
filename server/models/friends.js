@@ -1,16 +1,21 @@
-const {DataTypes} = require('sequelize')
-const {sequelize} = require('../util/database')
+const { DataTypes } = require('sequelize')
+const { sequelize } = require('../util/database')
 
-module.exports = { 
+module.exports = {
     Friends: sequelize.define('friends', {
+        // timestamps: false,
+        // createdAt: false,
+        // updatedAt: false,
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             allowNull: false,
             primaryKey: true
         },
-        friendOne: DataTypes.INTEGER,
-        friendTwo: DataTypes.INTEGER,
-        status: DataTypes.BOOLEAN
+        friend_one: DataTypes.INTEGER,
+        friend_two: DataTypes.INTEGER,
+        status: DataTypes.BOOLEAN,
+        createdAt: { type: DataTypes.DATE, allowNull: true, defaultValue: sequelize.literal('CURRENT_TIMESTAMP') },
+        updatedAt: { type: DataTypes.DATE, allowNull: true, defaultValue: sequelize.literal('CURRENT_TIMESTAMP') }
     })
 }

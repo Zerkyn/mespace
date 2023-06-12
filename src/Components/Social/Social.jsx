@@ -1,12 +1,25 @@
-import React from "react";
+import React,{useState} from 'react';
 import Header from '../Header/Header'
+import Profile from "../Profile/Profile";
+import FindFriends from "../Friends/FindFriends";
+import Friends from "../Friends/Friends";
+import ChatRoom from '../Messages/ChatRoom'
 
-const Social = (props) => {
 
-    return(
+const Social = ({user, setUser}) => {
+    const [chatFriend, setChatFriend] = useState({})
+
+
+
+    return (
         <div>
-            Social
-            <Header setUser={props.setUser} user={props.user}/>
+            <Header setUser={setUser} user={user} />
+            <div>
+                <Profile setUser={setUser} user={user} />
+                <Friends user={user} setChatFriend={setChatFriend}/>
+                <FindFriends user={user}/>
+                <ChatRoom user={user} chatFriend={chatFriend}/>
+            </div>
         </div>
     )
 }

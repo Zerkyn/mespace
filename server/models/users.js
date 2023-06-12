@@ -11,7 +11,6 @@ module.exports = {
         },
         username: DataTypes.STRING,
         password: DataTypes.STRING,
-        email: DataTypes.STRING,
         profileImg: DataTypes.TEXT
     })
 }
