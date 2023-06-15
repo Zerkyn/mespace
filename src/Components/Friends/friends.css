@@ -1,0 +1,36 @@
+.all-friends{
+    height: 90vh;
+    width: 300px;
+    overflow-y: scroll;
+    direction:rtl;
+    scrollbar-width: 0px;
+    border-radius: 5px;
+}
+h4{
+    margin: 0;
+}
+.friend{
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    direction:ltr;
+    margin: 5px;
+    align-items: center;
+}
+
+.friend-img{
+    height:45px;
+    width: 45px;
+    overflow: hidden;
+    border-radius: 30%;
+}
+
+.friend-img img{
+    height: 100%;
+}
+
+.default-friend{
+    height: 200px;
+    width: 200px;
+    background-color: white;
+}

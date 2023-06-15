@@ -36,10 +36,13 @@ const Login = (props) => {
     return (
         <div
             style={{
-                height: '100vh',
+                height: '100%',
+                // width: '100vw',
+                overflow: 'none',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 background: `url(${background})`,
+                backgroundPosition: 'center',
                 display: "flex",
                 alignItems: "center",
             }}>
@@ -53,11 +56,15 @@ const Login = (props) => {
                     </input>
                     <input
                         placeholder="Password"
-                        onChange={e => setPassword(e.target.value)}>
+                        onChange={e => setPassword(e.target.value)}
+                        type="password">
 
                     </input>
-                    <button onClick={(e) => logIn(e)}>Login</button>
-                    <button onClick={(e) => signUp(e)}>Register</button>
+                    <div>
+                        <button onClick={(e) => logIn(e)}>Login</button>
+                        <button onClick={(e) => signUp(e)}>Register</button>
+                    </div>
+                    
                 </form>
             </main>
         </div>
